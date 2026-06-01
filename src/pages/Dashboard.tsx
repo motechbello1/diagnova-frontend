@@ -43,7 +43,7 @@ const Dashboard: React.FC = () => {
         </Typography>
         <Grid container spacing={3}>
           {dimensions.map((d, i) => (
-            <Grid size={{ xs: {12} sm={6} md={3} key={i}>
+            <Grid size={{xs:12, sm:6, md:3}} key={i}>
               <Card sx={{ textAlign: 'center', py: 4, px: 2, transition: 'all 0.3s', '&:hover': { transform: 'translateY(-8px)', borderColor: d.color } }}>
                 <Box sx={{ color: d.color, mb: 2 }}>{d.icon}</Box>
                 <CardContent sx={{ p: '0 !important' }}>
@@ -61,5 +61,3 @@ const Dashboard: React.FC = () => {
 };
 
 export default Dashboard;
-
-

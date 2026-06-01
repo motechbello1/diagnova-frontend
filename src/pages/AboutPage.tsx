@@ -7,7 +7,7 @@ const AboutPage: React.FC = () => (
     <Box sx={{ py: 6 }}>
       <Typography variant="h4" gutterBottom fontWeight={700}>About DiagNova</Typography>
       <Grid container spacing={3} sx={{ mt: 2 }}>
-        <Grid size={{ xs: {12} md={6}>
+        <Grid size={{xs:12, md:6}}>
           <Card sx={{ height: '100%' }}>
             <CardContent sx={{ p: 3 }}>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}><SchoolIcon sx={{ color: '#6C63FF' }} /><Typography variant="h6" fontWeight={600}>Research Project</Typography></Box>
@@ -18,7 +18,7 @@ const AboutPage: React.FC = () => (
             </CardContent>
           </Card>
         </Grid>
-        <Grid size={{ xs: {12} md={6}>
+        <Grid size={{xs:12, md:6}}>
           <Card sx={{ height: '100%' }}>
             <CardContent sx={{ p: 3 }}>
               <Typography variant="h6" fontWeight={600} gutterBottom>Technical Stack</Typography>
@@ -37,5 +37,3 @@ const AboutPage: React.FC = () => (
 );
 
 export default AboutPage;
-
-
