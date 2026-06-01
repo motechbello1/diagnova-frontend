@@ -65,7 +65,7 @@ const AssessmentForm: React.FC<Props> = ({ onResult }) => {
         <Grid container spacing={3}>
           <Grid size={{xs:12, md:4}}><TextField fullWidth required type="number" label="Number of Screens" name="screens" value={formData.screens} onChange={handleChange} /></Grid>
           <Grid size={{xs:12, md:4}}><TextField fullWidth required type="number" label="Interactions per Task" name="interactions_per_task" value={formData.interactions_per_task} onChange={handleChange} /></Grid>
-          <Grid size={{xs:12, md:4}}><TextField fullWidth required type="number" label="Completion Rate (0-1)" name="completion_rate" value={formData.completion_rate} onChange={handleChange} inputProps={{step:0.01,min:0,max:1}} /></Grid>
+          <Grid size={{xs:12, md:4}}><TextField fullWidth required type="number" label="Completion Rate (0-1)" name="completion_rate" value={formData.completion_rate} onChange={handleChange} slotProps={{htmlInput:{step:0.01,min:0,max:1}}} /></Grid>
         </Grid>
       );
       case 4: return (
@@ -106,3 +106,4 @@ const AssessmentForm: React.FC<Props> = ({ onResult }) => {
 };
 
 export default AssessmentForm;
+
