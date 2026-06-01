@@ -47,7 +47,7 @@ const DiagnosticReport: React.FC<Props> = ({ result }) => {
 
       <Grid container spacing={3}>
         {/* Radar Chart */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: {12} md={6}>
           <Card sx={{ height: '100%' }}>
             <CardContent>
               <Typography variant="h6" fontWeight={600} gutterBottom>Reliability Radar</Typography>
@@ -64,7 +64,7 @@ const DiagnosticReport: React.FC<Props> = ({ result }) => {
         </Grid>
 
         {/* Pie Chart */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: {12} md={6}>
           <Card sx={{ height: '100%' }}>
             <CardContent>
               <Typography variant="h6" fontWeight={600} gutterBottom>Dimension Breakdown</Typography>
@@ -82,7 +82,7 @@ const DiagnosticReport: React.FC<Props> = ({ result }) => {
         </Grid>
 
         {/* Dimension Bars */}
-        <Grid item xs={12}>
+        <Grid size={{ xs: {12}>
           <Card>
             <CardContent>
               <Typography variant="h6" fontWeight={600} gutterBottom>Dimension Scores</Typography>
@@ -104,7 +104,7 @@ const DiagnosticReport: React.FC<Props> = ({ result }) => {
 
         {/* Issues */}
         {result.issues?.length > 0 && (
-          <Grid item xs={12}>
+          <Grid size={{ xs: {12}>
             <Card>
               <CardContent>
                 <Typography variant="h6" fontWeight={600} gutterBottom>Issues Found ({result.issues.length})</Typography>
@@ -129,7 +129,7 @@ const DiagnosticReport: React.FC<Props> = ({ result }) => {
 
         {/* Recommendations */}
         {result.recommendations?.length > 0 && (
-          <Grid item xs={12}>
+          <Grid size={{ xs: {12}>
             <Card>
               <CardContent>
                 <Typography variant="h6" fontWeight={600} gutterBottom>Recommendations</Typography>
@@ -149,3 +149,5 @@ const DiagnosticReport: React.FC<Props> = ({ result }) => {
 };
 
 export default DiagnosticReport;
+
+

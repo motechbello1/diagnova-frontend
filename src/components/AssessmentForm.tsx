@@ -37,8 +37,8 @@ const AssessmentForm: React.FC<Props> = ({ onResult }) => {
     switch (activeStep) {
       case 0: return (
         <Grid container spacing={3}>
-          <Grid item xs={12} md={6}><TextField fullWidth required label="Application Name" name="app_name" value={formData.app_name} onChange={handleChange} placeholder="e.g., WhatsApp" /></Grid>
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: {12} md={6}><TextField fullWidth required label="Application Name" name="app_name" value={formData.app_name} onChange={handleChange} placeholder="e.g., WhatsApp" /></Grid>
+          <Grid size={{ xs: {12} md={6}>
             <FormControl fullWidth><InputLabel>Platform</InputLabel>
               <Select name="platform" value={formData.platform} onChange={handleChange} label="Platform">
                 <MenuItem value="Android">Android</MenuItem><MenuItem value="iOS">iOS</MenuItem>
@@ -49,28 +49,28 @@ const AssessmentForm: React.FC<Props> = ({ onResult }) => {
       );
       case 1: return (
         <Grid container spacing={3}>
-          <Grid item xs={12} md={6}><TextField fullWidth required type="number" label="Startup Time (ms)" name="startup_time" value={formData.startup_time} onChange={handleChange} helperText="Time from launch to interactive state" /></Grid>
-          <Grid item xs={12} md={6}><TextField fullWidth required type="number" label="Frame Rate (FPS)" name="frame_rate" value={formData.frame_rate} onChange={handleChange} helperText="Average FPS (target: 60)" /></Grid>
-          <Grid item xs={12} md={6}><TextField fullWidth required type="number" label="Memory Used (MB)" name="memory_used" value={formData.memory_used} onChange={handleChange} helperText="Peak memory consumption" /></Grid>
-          <Grid item xs={12} md={6}><TextField fullWidth required type="number" label="Device Memory (MB)" name="memory_available" value={formData.memory_available} onChange={handleChange} helperText="Total device RAM" /></Grid>
+          <Grid size={{ xs: {12} md={6}><TextField fullWidth required type="number" label="Startup Time (ms)" name="startup_time" value={formData.startup_time} onChange={handleChange} helperText="Time from launch to interactive state" /></Grid>
+          <Grid size={{ xs: {12} md={6}><TextField fullWidth required type="number" label="Frame Rate (FPS)" name="frame_rate" value={formData.frame_rate} onChange={handleChange} helperText="Average FPS (target: 60)" /></Grid>
+          <Grid size={{ xs: {12} md={6}><TextField fullWidth required type="number" label="Memory Used (MB)" name="memory_used" value={formData.memory_used} onChange={handleChange} helperText="Peak memory consumption" /></Grid>
+          <Grid size={{ xs: {12} md={6}><TextField fullWidth required type="number" label="Device Memory (MB)" name="memory_available" value={formData.memory_available} onChange={handleChange} helperText="Total device RAM" /></Grid>
         </Grid>
       );
       case 2: return (
         <Grid container spacing={3}>
-          <Grid item xs={12} md={6}><TextField fullWidth required type="number" label="Number of Crashes" name="crashes" value={formData.crashes} onChange={handleChange} helperText="Total crashes recorded" /></Grid>
-          <Grid item xs={12} md={6}><TextField fullWidth required type="number" label="Total Sessions" name="sessions" value={formData.sessions} onChange={handleChange} helperText="Total user sessions" /></Grid>
+          <Grid size={{ xs: {12} md={6}><TextField fullWidth required type="number" label="Number of Crashes" name="crashes" value={formData.crashes} onChange={handleChange} helperText="Total crashes recorded" /></Grid>
+          <Grid size={{ xs: {12} md={6}><TextField fullWidth required type="number" label="Total Sessions" name="sessions" value={formData.sessions} onChange={handleChange} helperText="Total user sessions" /></Grid>
         </Grid>
       );
       case 3: return (
         <Grid container spacing={3}>
-          <Grid item xs={12} md={4}><TextField fullWidth required type="number" label="Number of Screens" name="screens" value={formData.screens} onChange={handleChange} /></Grid>
-          <Grid item xs={12} md={4}><TextField fullWidth required type="number" label="Interactions per Task" name="interactions_per_task" value={formData.interactions_per_task} onChange={handleChange} /></Grid>
-          <Grid item xs={12} md={4}><TextField fullWidth required type="number" label="Completion Rate (0-1)" name="completion_rate" value={formData.completion_rate} onChange={handleChange} inputProps={{step:0.01,min:0,max:1}} /></Grid>
+          <Grid size={{ xs: {12} md={4}><TextField fullWidth required type="number" label="Number of Screens" name="screens" value={formData.screens} onChange={handleChange} /></Grid>
+          <Grid size={{ xs: {12} md={4}><TextField fullWidth required type="number" label="Interactions per Task" name="interactions_per_task" value={formData.interactions_per_task} onChange={handleChange} /></Grid>
+          <Grid size={{ xs: {12} md={4}><TextField fullWidth required type="number" label="Completion Rate (0-1)" name="completion_rate" value={formData.completion_rate} onChange={handleChange} inputProps={{step:0.01,min:0,max:1}} /></Grid>
         </Grid>
       );
       case 4: return (
         <Grid container spacing={3}>
-          <Grid item xs={12}><TextField fullWidth required label="Recovery Times (comma-separated seconds)" name="recovery_times" value={formData.recovery_times} onChange={handleChange} placeholder="1.2, 0.8, 1.5, 2.0" helperText="Time to recover from each error incident" /></Grid>
+          <Grid size={{ xs: {12}><TextField fullWidth required label="Recovery Times (comma-separated seconds)" name="recovery_times" value={formData.recovery_times} onChange={handleChange} placeholder="1.2, 0.8, 1.5, 2.0" helperText="Time to recover from each error incident" /></Grid>
         </Grid>
       );
       default: return null;
@@ -106,3 +106,5 @@ const AssessmentForm: React.FC<Props> = ({ onResult }) => {
 };
 
 export default AssessmentForm;
+
+
