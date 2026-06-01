@@ -50,7 +50,7 @@ const DiagnosticReport: React.FC<Props> = ({ result }) => {
         <Grid size={{xs:12, md:6}}>
           <Card sx={{ height: '100%' }}>
             <CardContent>
-              <Typography variant="h6" fontWeight={600} gutterBottom>Reliability Radar</Typography>
+              <Typography variant="h6" gutterBottom sx={{fontWeight:600}}>Reliability Radar</Typography>
               <ResponsiveContainer width="100%" height={300}>
                 <RadarChart data={radarData}>
                   <PolarGrid stroke="rgba(255,255,255,0.1)" />
@@ -67,7 +67,7 @@ const DiagnosticReport: React.FC<Props> = ({ result }) => {
         <Grid size={{xs:12, md:6}}>
           <Card sx={{ height: '100%' }}>
             <CardContent>
-              <Typography variant="h6" fontWeight={600} gutterBottom>Dimension Breakdown</Typography>
+              <Typography variant="h6" gutterBottom sx={{fontWeight:600}}>Dimension Breakdown</Typography>
               <ResponsiveContainer width="100%" height={300}>
                 <PieChart>
                   <Pie data={pieData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={90} innerRadius={50} paddingAngle={4} label={({ name, value }) => `${value.toFixed(0)}`}>
@@ -85,15 +85,15 @@ const DiagnosticReport: React.FC<Props> = ({ result }) => {
         <Grid size={{xs:12}}>
           <Card>
             <CardContent>
-              <Typography variant="h6" fontWeight={600} gutterBottom>Dimension Scores</Typography>
+              <Typography variant="h6" gutterBottom sx={{fontWeight:600}}>Dimension Scores</Typography>
               {Object.entries(result.dimensions || {}).map(([key, value]: [string, any], i: number) => (
                 <Box key={key} sx={{ mb: 2.5 }}>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                       <Box sx={{ width: 12, height: 12, borderRadius: '50%', background: COLORS[i] }} />
-                      <Typography variant="body2" fontWeight={600} sx={{ textTransform: 'capitalize' }}>{key.replace('_', ' ')}</Typography>
+                      <Typography variant="body2" sx={{fontWeight:600}} sx={{ textTransform: 'capitalize' }}>{key.replace('_', ' ')}</Typography>
                     </Box>
-                    <Typography variant="body2" fontWeight={700} sx={{ color: getScoreColor(value) }}>{value?.toFixed(1)}/100</Typography>
+                    <Typography variant="body2" sx={{fontWeight:700}} sx={{ color: getScoreColor(value) }}>{value?.toFixed(1)}/100</Typography>
                   </Box>
                   <LinearProgress variant="determinate" value={Math.min(value, 100)} sx={{ height: 10, borderRadius: 5, backgroundColor: 'rgba(255,255,255,0.05)', '& .MuiLinearProgress-bar': { borderRadius: 5, background: `linear-gradient(90deg, ${COLORS[i]}, ${COLORS[(i+1)%COLORS.length]})` } }} />
                 </Box>
@@ -107,13 +107,13 @@ const DiagnosticReport: React.FC<Props> = ({ result }) => {
           <Grid size={{xs:12}}>
             <Card>
               <CardContent>
-                <Typography variant="h6" fontWeight={600} gutterBottom>Issues Found ({result.issues.length})</Typography>
+                <Typography variant="h6" gutterBottom sx={{fontWeight:600}}>Issues Found ({result.issues.length})</Typography>
                 {result.issues.map((issue: any, i: number) => (
                   <Paper key={i} sx={{ p: 2, mb: 1.5, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
                       {getSeverityIcon(issue.severity)}
                       <Box sx={{ flexGrow: 1 }}>
-                        <Typography variant="body2" fontWeight={600}>{issue.issue}</Typography>
+                        <Typography variant="body2" sx={{fontWeight:600}}>{issue.issue}</Typography>
                         <Box sx={{ display: 'flex', gap: 1, mt: 0.5 }}>
                           <Chip label={issue.dimension} size="small" sx={{ fontSize: 11, height: 22 }} />
                           <Chip label={issue.severity} size="small" color={issue.severity === 'critical' ? 'error' : issue.severity === 'high' ? 'warning' : 'info'} sx={{ fontSize: 11, height: 22 }} />
@@ -132,7 +132,7 @@ const DiagnosticReport: React.FC<Props> = ({ result }) => {
           <Grid size={{xs:12}}>
             <Card>
               <CardContent>
-                <Typography variant="h6" fontWeight={600} gutterBottom>Recommendations</Typography>
+                <Typography variant="h6" gutterBottom sx={{fontWeight:600}}>Recommendations</Typography>
                 {result.recommendations.slice(0, 8).map((rec: string, i: number) => (
                   <Box key={i} sx={{ display: 'flex', gap: 2, py: 1.5, borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     <Chip label={i + 1} size="small" sx={{ background: 'rgba(108,99,255,0.2)', color: '#6C63FF', fontWeight: 700, minWidth: 28 }} />
@@ -149,3 +149,4 @@ const DiagnosticReport: React.FC<Props> = ({ result }) => {
 };
 
 export default DiagnosticReport;
+

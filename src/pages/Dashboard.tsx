@@ -38,7 +38,7 @@ const Dashboard: React.FC = () => {
       </Box>
 
       <Container maxWidth="lg" sx={{ py: 6 }}>
-        <Typography variant="h4" gutterBottom fontWeight={700} textAlign="center" sx={{ mb: 5 }}>
+        <Typography variant="h4" gutterBottom textAlign=" sx={{fontWeight:700}} center" sx={{ mb: 5 }}>
           Four Reliability Dimensions
         </Typography>
         <Grid container spacing={3}>
@@ -47,7 +47,7 @@ const Dashboard: React.FC = () => {
               <Card sx={{ textAlign: 'center', py: 4, px: 2, transition: 'all 0.3s', '&:hover': { transform: 'translateY(-8px)', borderColor: d.color } }}>
                 <Box sx={{ color: d.color, mb: 2 }}>{d.icon}</Box>
                 <CardContent sx={{ p: '0 !important' }}>
-                  <Typography variant="h6" fontWeight={700}>{d.title}</Typography>
+                  <Typography variant="h6" sx={{fontWeight:700}}>{d.title}</Typography>
                   <Typography variant="body2" color="text.secondary" sx={{ mt: 1, mb: 2 }}>{d.desc}</Typography>
                   <Chip label={`${d.count} rules`} size="small" sx={{ background: `${d.color}22`, color: d.color, fontWeight: 600 }} />
                 </CardContent>
@@ -61,3 +61,4 @@ const Dashboard: React.FC = () => {
 };
 
 export default Dashboard;
+

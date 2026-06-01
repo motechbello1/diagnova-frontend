@@ -81,7 +81,7 @@ const AssessmentForm: React.FC<Props> = ({ onResult }) => {
     <Card sx={{ background: 'linear-gradient(180deg, rgba(26,26,46,1) 0%, rgba(15,14,23,1) 100%)' }}>
       <CardContent sx={{ p: 4 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
-          <Typography variant="h5" fontWeight={700}>New Reliability Assessment</Typography>
+          <Typography variant="h5" sx={{fontWeight:700}}>New Reliability Assessment</Typography>
           <Chip label="247 Rules" size="small" sx={{ ml: 2, background: 'rgba(108,99,255,0.2)', color: '#6C63FF', fontWeight: 600 }} />
         </Box>
         {error && <Alert severity="error" sx={{ mb: 3, borderRadius: 2 }}>{error}</Alert>}
@@ -106,4 +106,5 @@ const AssessmentForm: React.FC<Props> = ({ onResult }) => {
 };
 
 export default AssessmentForm;
+
 
