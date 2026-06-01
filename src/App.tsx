@@ -16,19 +16,11 @@ const theme = createTheme({
     secondary: { main: '#FF6584' },
     background: { default: '#0F0E17', paper: '#1A1A2E' },
   },
-  typography: {
-    fontFamily: '"Inter", "Roboto", sans-serif',
-    h1: { fontWeight: 800 },
-    h2: { fontWeight: 700 },
-    h3: { fontWeight: 700 },
-    h4: { fontWeight: 600 },
-    h5: { fontWeight: 600 },
-  },
+  typography: { fontFamily: '"Inter","Roboto",sans-serif' },
   shape: { borderRadius: 12 },
   components: {
-    MuiButton: { styleOverrides: { root: { borderRadius: 10, textTransform: 'none', fontWeight: 600, padding: '10px 24px' } } },
+    MuiButton: { styleOverrides: { root: { borderRadius: 10, textTransform: 'none' as const, fontWeight: 600, padding: '10px 24px' } } },
     MuiCard: { styleOverrides: { root: { borderRadius: 16, backgroundImage: 'none', border: '1px solid rgba(108,99,255,0.15)' } } },
-    MuiTextField: { styleOverrides: { root: { '& .MuiOutlinedInput-root': { borderRadius: 10 } } } },
   },
 });
 
@@ -47,14 +39,12 @@ function App() {
               <Route path="/about" element={<AboutPage />} />
             </Routes>
           </Box>
-          <Box component="footer" sx={{ py: 3, textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-            <Box sx={{ color: 'text.secondary', fontSize: 14 }}>DiagNova v1.0 — Sadiq Hayatu Abubakar — Skyline University Nigeria</Box>
+          <Box sx={{ py: 3, textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.08)', color: 'text.secondary', fontSize: 14 }}>
+            DiagNova v1.0 — Sadiq Hayatu Abubakar — Skyline University Nigeria
           </Box>
         </Box>
       </Router>
     </ThemeProvider>
   );
 }
-
 export default App;
-

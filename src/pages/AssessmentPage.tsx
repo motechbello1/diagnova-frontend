@@ -8,12 +8,10 @@ const AssessmentPage: React.FC = () => {
   return (
     <Container maxWidth="lg">
       <Box sx={{ py: 4 }}>
-        <AssessmentForm onResult={(r) => { setResult(r); window.scrollTo({ top: 600, behavior: 'smooth' }); }} />
+        <AssessmentForm onResult={(r: any) => { setResult(r); window.scrollTo({ top: 600, behavior: 'smooth' }); }} />
         {result && <Box sx={{ mt: 4 }}><DiagnosticReport result={result} /></Box>}
       </Box>
     </Container>
   );
 };
-
 export default AssessmentPage;
-
